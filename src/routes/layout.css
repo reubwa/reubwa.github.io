@@ -239,9 +239,40 @@ body {
 }
 
 h1 {
-    font-size: var(--text-7xl);
+    font-size: var(--text-4xl);
 }
 
 p {
-    font-size: var(--text-3xl);
+    font-size: var(--text-lg);
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: var(--text-7xl);
+    }
+
+    p {
+        font-size: var(--text-3xl);
+    }
+}
+
+.a-button {
+    background-color: #f3f781;
+    color: #5e2338;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 10px;
+    max-height: 40px;
+    min-height: 40px;
+    max-width: 70px;
+    min-width: 70px;
+    text-align: center;
+}
+
+.a-button:hover {
+    cursor: pointer;
+    background-color: #5e2338;
+    border-color: #f3f781;
+    color: #f3f781;
+    border-width: 0.1px;
 }
