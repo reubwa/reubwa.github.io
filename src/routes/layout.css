@@ -246,9 +246,37 @@ p {
     font-size: var(--text-lg);
 }
 
+.s {
+    font-size: var(--text-base);
+}
+
+h2 {
+    font-size: var(--text-3xl);
+}
+
+h3 {
+    font-size: var(--text-2xl);
+}
+
+h4 {
+    font-size: var(--text-xl);
+}
+
 @media (min-width: 768px) {
     h1 {
         font-size: var(--text-7xl);
+    }
+
+    h2 {
+        font-size: var(--text-6xl);
+    }
+
+    h3 {
+        font-size: var(--text-5xl);
+    }
+
+    h4 {
+        font-size: var(--text-4xl);
     }
 
     p {
