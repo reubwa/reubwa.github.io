@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+	import Button from '$lib/Button.svelte';
 </script>
 
 <title>Reuben Waring's Website</title>
@@ -13,8 +14,8 @@
 		<div class="flex flex-col w-full md:w-1/2 text-center md:text-left gap-2.5 items-center">
 			<img src="/IMG_2946.JPG" alt="Reuben Waring Headshot" class="rounded-full w-48 h-48 md:w-80 md:h-80 object-cover"/>
 			<div class="flex flex-row w-full md:w-1/2 text-center md:text-left gap-2.5 items-center justify-center">
-				<div class="a-button">Test</div>
-				<div class="a-button">Test</div>
+				<Button label="Github" href="github.com/reubwa" icon="Github"/>
+				<Button label="LinkedIn" href="linkedin.com/in/reubenwaring" icon="Linkedin"/>
 			</div>
 		</div>
 	</div>
