@@ -86,7 +86,7 @@
 	<img src="/present2.jpeg" alt="Screenshot of Present 2" class="object-cover w-full h-full max-w-full max-h-full min-w-full min-h-full"/>
 </BaseDialog>
 <BaseDialog bind:show={showJSONistLightbox}>
-	<img src="/jsonist.png" alt="Screenshot of JSONist" class="w-full h-full max-w-full max-h-full min-w-full min-h-full"/>
+	<img src="/jsonist.png" alt="Screenshot of JSONist" class="min-w-screen min-h-screen w-screen h-screen"/>
 </BaseDialog>
 <style>
 
