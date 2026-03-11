@@ -19,7 +19,7 @@
 		<div class="flex flex-col w-full md:w-1/2 text-center md:text-left" id="top">
 			<h1 class="ibm-plex-serif-bold mb-4">Hi!
 				<br> I'm Reuben Waring</h1>
-			<p class="ibm-plex-mono-regular mb-4">I'm a second year Computer Science student at Sheffield Hallam University and keen programmer.
+			<p class="ibm-plex-mono-regular mb-4">I'm a second year Computer Science student at Sheffield Hallam University and a keen programmer.
 				On here, you'll find a varied selection of my projects from both University and personal work.</p>
 			<a href="#projects" class="ibm-plex-mono-regular text-lg underline">↓ Projects</a>
 		</div>
