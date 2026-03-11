@@ -7,12 +7,18 @@
 	let showPresentLightbox = false;
 	let showJSONistLightbox = false;
 </script>
+
 <svelte:window bind:scrollY />
-<title>Reuben Waring's Website</title>
-<div class="flex flex-col justify-center items-center min-h-screen p-6 md:p-12 w-full overflow-x-hidden">
-	<div class="flex flex-col-reverse md:flex-row justify-center items-center gap-8 md:gap-12 max-w-6xl w-full">
+
+<svelte:head>
+	<title>Reuben Waring's Website</title>
+</svelte:head>
+
+<div class="flex flex-col justify-center items-center min-h-screen w-full">
+	<div class="flex flex-col-reverse md:flex-row justify-center items-center gap-8 md:gap-12 max-w-6xl w-full px-6 md:px-12 pt-6 md:pt-12">
 		<div class="flex flex-col w-full md:w-1/2 text-center md:text-left" id="top">
-			<h1 class="ibm-plex-serif-bold mb-4">Hi! <br> I'm Reuben Waring</h1>
+			<h1 class="ibm-plex-serif-bold mb-4">Hi!
+				<br> I'm Reuben Waring</h1>
 			<p class="ibm-plex-mono-regular mb-4">I'm a second year Computer Science student at Sheffield Hallam University and keen programmer.
 				On here, you'll find a varied selection of my projects from both University and personal work.</p>
 			<a href="#projects" class="ibm-plex-mono-regular text-lg underline">↓ Projects</a>
@@ -26,8 +32,9 @@
 		</div>
 	</div>
 
-	<div class="flex flex-row sticky top-0 w-full justify-center bg-[#5e2338] z-10 py-4 mt-8 min-w-screen transition-discrete duration-300 {scrollY > scrollThreshold ? 'border-b-[#f3f781] border-b' : 'border-0'}">
-		<div class="flex flex-row gap-2.5 md:gap-4 mr-3 md:mr-0 items-center pl-6 transition-opacity duration-300 {scrollY > scrollThreshold ? 'opacity-100' : 'opacity-0 pointer-events-none'}">
+	<div class="flex flex-row sticky top-0 w-full justify-center bg-[#5e2338] z-10 py-4 mt-8 transition-discrete duration-300 {scrollY > scrollThreshold ? 'border-b-[#f3f781] border-b' : 'border-0'}">
+		<div class="flex flex-row gap-2.5 md:gap-4 mr-3 md:mr-0 items-center pl-6 transition-opacity duration-300 {scrollY > scrollThreshold ?
+'opacity-100' : 'opacity-0 pointer-events-none'}">
 			<h4 class="ibm-plex-serif-bold">Reuben Waring</h4>
 			<Button label="" href="github.com/reubwa" icon="Github"/>
 			<Button label="" href="linkedin.com/in/reubenwaring" icon="Linkedin"/>
@@ -38,7 +45,7 @@
 		</div>
 	</div>
 
-	<div class="flex flex-col max-w-6xl w-full gap-4" id="projects">
+	<div class="flex flex-col max-w-6xl w-full gap-4 px-6 md:px-12 pb-6 md:pb-12 mt-8" id="projects">
 		<div class="flex flex-row items-center gap-4">
 			<h2 class="ibm-plex-serif-bold">Projects</h2>
 			<a href="#top" class="ibm-plex-mono-regular text-lg underline">↑ Top</a>
@@ -50,7 +57,8 @@
 			</div>
 			<div class="flex flex-col p-2.5 md:p-0 -mt-5 md:m-0">
 				<h4 class="ibm-plex-sans-600">Present 2</h4>
-				<p class="s ibm-plex-sans-400">Web-based Reveal.js presentation editor with support for transitions, markdown and PDF export. Written in Svelte.</p>
+				<p class="s ibm-plex-sans-400">Web-based Reveal.js presentation editor with support for transitions, markdown and PDF export.
+					Written in Svelte.</p>
 			</div>
 			<div class="overflow-x-hidden flex flex-row md:flex-col mt-2 mr-2 mb-2 md:min-w-34 md:max-w-34 ml-2 gap-2 p-2.5 md:p-0">
 				<Button label="Source" href="github.com/reubwa/present2" icon="Github" grow={true} cl="w-full"/>
@@ -64,7 +72,8 @@
 			</div>
 			<div class="flex flex-col p-2.5 md:p-0 -mt-5 md:m-0">
 				<h4 class="ibm-plex-sans-600">JSONist</h4>
-				<p class="s ibm-plex-sans-400">Desktop tool for analysing Network Rail Tiplocs, including performing LINQ queries and filtering. Written in C# and WinForms.</p>
+				<p class="s ibm-plex-sans-400">Desktop tool for analysing Network Rail Tiplocs, including performing LINQ queries and filtering.
+					Written in C# and WinForms.</p>
 			</div>
 			<div class="overflow-x-hidden flex flex-row md:flex-col mt-2 mr-2 mb-2 md:min-w-fit md:max-w-fit ml-2 gap-2 p-2.5 md:p-0">
 				<Button label="Source" href="github.com/reubwa/jsonist" icon="Github" grow={true} cl="w-full"/>
@@ -81,18 +90,18 @@
 </BaseDialog>
 <style>
 
-	a:hover {
-			text-decoration: none;
-	}
+    a:hover {
+        text-decoration: none;
+    }
 
-	button{
-			border: 1px solid transparent;
-	}
+    button{
+        border: 1px solid transparent;
+    }
 
-	button:hover {
-      cursor: pointer;
-      background-color: #5e2338;
-      border-color: #f3f781;
-      color: #f3f781;
-	}
+    button:hover {
+        cursor: pointer;
+        background-color: #5e2338;
+        border-color: #f3f781;
+        color: #f3f781;
+    }
 </style>
