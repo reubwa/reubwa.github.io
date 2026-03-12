@@ -1,6 +1,6 @@
 <script lang="ts">
 	let { icon, label, href, cl = "", grow = false } = $props();
-	import { Github, Linkedin, Play, Download } from '@lucide/svelte';
+	import { Github, Linkedin, Play, Download, SquareArrowOutUpRight } from '@lucide/svelte';
 </script>
 <a class="no-underline text-inherit {cl}" href="https://{href}" title={label} target="_blank">
 	<div class="ibm-plex-mono-regular flex flex-row gap-2.5 bg-[#f3f781] text-[#5e2338] rounded-[20px] {grow ? 'w-full' : 'w-fit'} p-2.5 text-center">
@@ -12,6 +12,8 @@
 			<Play/>
 		{:else if icon === "Download"}
 			<Download/>
+		{:else if icon === "Read"}
+			<SquareArrowOutUpRight />
 		{/if}
 		{label}
 	</div>
