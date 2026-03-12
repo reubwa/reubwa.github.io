@@ -98,13 +98,13 @@
 	</div>
 </div>
 <BaseDialog bind:show={showPresentLightbox}>
-	<img src="/present2.jpeg" alt="Screenshot of Present 2" class="w-full h-full max-w-full max-h-full min-w-full min-h-full"/>
+	<img src="/present2.jpeg" alt="Screenshot of Present 2" class="w-full md:h-full max-w-full md:max-h-full min-w-full md:min-h-full"/>
 </BaseDialog>
 <BaseDialog bind:show={showJSONistLightbox}>
-	<img src="/jsonist.png" alt="Screenshot of JSONist" class="min-w-screen min-h-screen w-screen h-screen"/>
+	<img src="/jsonist.png" alt="Screenshot of JSONist" class="min-w-screen md:min-h-screen w-screen md:h-screen"/>
 </BaseDialog>
 <BaseDialog bind:show={showBudgetTrackerLightbox}>
-	<img src="/budget-tracker.png" alt="Screenshot of Budget Tracker" class="w-full h-full max-w-full max-h-full min-w-full min-h-full"/>
+	<img src="/budget-tracker.png" alt="Screenshot of Budget Tracker" class="w-full md:h-full max-w-full md:max-h-full min-w-full md:min-h-full"/>
 </BaseDialog>
 <style>
 
