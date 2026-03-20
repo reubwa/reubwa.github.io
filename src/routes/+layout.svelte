@@ -8,6 +8,7 @@
 <svelte:head>
 	<link rel="icon" href={favicon} />
 	<!-- HTML Meta Tags -->
+	<title>Reuben Waring&#039;s Website</title>
 	<meta name="description" content="Sheffield-based Computer Science student looking for a placement/internship opportunity" />
 
 	<!-- Google / Search Engine Tags -->
