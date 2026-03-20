@@ -6,6 +6,7 @@
 	const scrollThreshold = 600;
 	let showPresentLightbox = false;
 	let showJSONistLightbox = false;
+	let showBudgetTrackerLightbox = false;
 </script>
 
 <svelte:window bind:scrollY />
@@ -21,7 +22,10 @@
 				<br> I'm Reuben Waring</h1>
 			<p class="ibm-plex-mono-regular mb-4">I'm a second year Computer Science student at Sheffield Hallam University and a keen programmer.
 				On here, you'll find a varied selection of my projects from both University and personal work.</p>
-			<a href="#projects" class="ibm-plex-mono-regular text-lg underline">↓ Projects</a>
+			<div class="flex flex-row gap-2.5 justify-center md:justify-start">
+				<a href="#projects" class="ibm-plex-mono-regular text-lg underline">↓ Projects</a>
+				<a href="#blog" class="ibm-plex-mono-regular text-lg underline">↓ Blog</a>
+			</div>
 		</div>
 		<div class="flex flex-col w-full md:w-1/2 text-center md:text-left gap-3.5 items-center">
 			<img src="/IMG_2946.JPG" alt="Reuben Waring Headshot" class="rounded-full w-48 h-48 md:w-80 md:h-80 object-cover"/>
@@ -80,13 +84,95 @@
 				<Button label="Download" href="github.com/reubwa/JSONist/releases/latest" icon="Download" grow={true} cl="w-full"/>
 			</div>
 		</div>
+		<div class="flex flex-col-reverse md:flex-row rounded-xl border-[#f3f781] border overflow-clip gap-2">
+			<div class="relative cursor-pointer" on:click={()=>{showBudgetTrackerLightbox=true}}>
+				<img src="/budget-tracker.png" alt="Screenshot of Budget Tracker" class=" h-fit md:h-30 w-full md:w-68">
+				<ZoomIn class="absolute bottom-0 right-0 mb-2.5 mr-2.5"/>
+			</div>
+			<div class="flex flex-col p-2.5 md:p-0 -mt-5 md:m-0">
+				<h4 class="ibm-plex-sans-600">Budget Tracker</h4>
+				<p class="s ibm-plex-sans-400">Project from my first year of my course. Track spending and saving, predict returns on savings. Written in PHP and uses SQLite.</p>
+			</div>
+			<div class="overflow-x-hidden flex flex-row md:flex-col mt-2 mr-2 mb-2 md:min-w-34 md:max-w-34 ml-2 gap-2 p-2.5 md:p-0">
+				<Button label="Source" href="github.com/reubwa/budget-tracker" icon="Github" grow={true} cl="w-full"/>
+				<Button label="Try" href="reubwa.github.io/coming-soon" icon="Play" grow={true} cl="w-full"/>
+			</div>
+		</div>
+	</div>
+	<div class="flex flex-col max-w-6xl w-full gap-4 px-6 md:px-12 pb-6 md:pb-12 mt-8" id="blog">
+		<div class="flex flex-row items-center gap-4">
+			<h2 class="ibm-plex-serif-bold">Blog</h2>
+			<a href="#top" class="ibm-plex-mono-regular text-lg underline">↑ Top</a>
+		</div>
+		<div class="flex flex-col-reverse md:flex-row rounded-xl border-[#f3f781] border overflow-clip gap-2">
+			<img src="/budget-tracker.png" alt="Screenshot of Budget Tracker" class="h-fit md:h-30 w-full md:w-51">
+			<div class="flex flex-col p-2.5 md:p-0 -mt-5 md:m-0 gap-1">
+				<h4 class="ibm-plex-sans-600">Learning how to ✨React✨</h4>
+				<p class="s ibm-plex-sans-400">A brief summary will be put here eventually.</p>
+				<div class="flex flex-row gap-2.5 items-center">
+					<p class="s ibm-plex-sans-400">12/03/2026 •</p>
+					<div class="border-[#f3f781] border rounded p-0.5">
+						<a class="ibm-plex-mono-regular text-sm underline" href="#top">React</a>
+					</div>
+					<div class="border-[#f3f781] border rounded p-0.5">
+						<a class="ibm-plex-mono-regular text-sm underline" href="#top">Uni Projects</a>
+					</div>
+					<div class="border-[#f3f781] border rounded p-0.5">
+						<a class="ibm-plex-mono-regular text-sm underline" href="#top">Web</a>
+					</div>
+					<div class="border-[#f3f781] border rounded p-0.5">
+						<a class="ibm-plex-mono-regular text-sm underline" href="#top">APIs</a>
+					</div>
+					<div class="border-[#f3f781] border rounded p-0.5">
+						<a class="ibm-plex-mono-regular text-sm underline" href="#top">TypeScript</a>
+					</div>
+				</div>
+			</div>
+			<div class="overflow-x-hidden flex flex-row md:flex-col mt-2 mr-2 mb-2 md:min-w-34 md:max-w-34 ml-2 gap-2 p-2.5 md:p-0">
+				<Button label="Read" href="reubwa.github.io/coming-soon" icon="Read" grow={true} cl="w-full"/>
+			</div>
+		</div>
+		<div class="flex flex-col-reverse md:flex-row rounded-xl border-[#f3f781] border overflow-clip gap-2">
+			<img src="/budget-tracker.png" alt="Screenshot of Budget Tracker" class="h-fit md:h-30 w-full md:w-51">
+			<div class="flex flex-col p-2.5 md:p-0 -mt-5 md:m-0 gap-1">
+				<h4 class="ibm-plex-sans-600">Running PHP on a Static Site</h4>
+				<p class="s ibm-plex-sans-400">A brief summary will be put here eventually.</p>
+				<div class="flex flex-row gap-2.5 items-center">
+					<p class="s ibm-plex-sans-400">12/03/2026 •</p>
+					<div class="border-[#f3f781] border rounded p-0.5">
+						<a class="ibm-plex-mono-regular text-sm underline" href="#top">PHP</a>
+					</div>
+					<div class="border-[#f3f781] border rounded p-0.5">
+						<a class="ibm-plex-mono-regular text-sm underline" href="#top">Uni Projects</a>
+					</div>
+					<div class="border-[#f3f781] border rounded p-0.5">
+						<a class="ibm-plex-mono-regular text-sm underline" href="#top">Web</a>
+					</div>
+					<div class="border-[#f3f781] border rounded p-0.5">
+						<a class="ibm-plex-mono-regular text-sm underline" href="#top">TypeScript</a>
+					</div>
+					<div class="border-[#f3f781] border rounded p-0.5">
+						<a class="ibm-plex-mono-regular text-sm underline" href="#top">SQLite</a>
+					</div>
+				</div>
+			</div>
+			<div class="overflow-x-hidden flex flex-row md:flex-col mt-2 mr-2 mb-2 md:min-w-34 md:max-w-34 ml-2 gap-2 p-2.5 md:p-0">
+				<Button label="Read" href="reubwa.github.io/coming-soon" icon="Read" grow={true} cl="w-full"/>
+			</div>
+		</div>
+	</div>
+	<div class="flex flex-col max-w-6xl w-full gap-4 px-6 md:px-12 pb-6 md:pb-12 mt-8 justify-center" id="copyright">
+		<p class="ibm-plex-mono-regular s">©2026 Reuben Waring</p>
 	</div>
 </div>
 <BaseDialog bind:show={showPresentLightbox}>
-	<img src="/present2.jpeg" alt="Screenshot of Present 2" class="object-cover w-full h-full max-w-full max-h-full min-w-full min-h-full"/>
+	<img src="/present2.jpeg" alt="Screenshot of Present 2" class="w-full md:h-full max-w-full md:max-h-full min-w-full md:min-h-full"/>
 </BaseDialog>
 <BaseDialog bind:show={showJSONistLightbox}>
-	<img src="/jsonist.png" alt="Screenshot of JSONist" class="min-w-screen min-h-screen w-screen h-screen"/>
+	<img src="/jsonist.png" alt="Screenshot of JSONist" class="min-w-screen md:min-h-screen w-screen md:h-screen"/>
+</BaseDialog>
+<BaseDialog bind:show={showBudgetTrackerLightbox}>
+	<img src="/budget-tracker.png" alt="Screenshot of Budget Tracker" class="w-full md:h-full max-w-full md:max-h-full min-w-full md:min-h-full"/>
 </BaseDialog>
 <style>
 
