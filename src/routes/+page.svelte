@@ -55,8 +55,21 @@
 			<a href="#top" class="ibm-plex-mono-regular text-lg underline">↑ Top</a>
 		</div>
 		<div class="flex flex-col-reverse md:flex-row rounded-xl border-[#f3f781] border overflow-clip gap-2">
+			<div class="relative cursor-pointer" on:click={()=>{showJSONistLightbox=true}}>
+				<img src="https://raw.githubusercontent.com/reubwa/journal/refs/heads/main/comb.png" alt="Screenshot of Journal" class=" h-fit md:h-30 w-full md:w-69">
+				<ZoomIn class="absolute bottom-0 right-0 mb-2.5 mr-2.5"/>
+			</div>
+			<div class="flex flex-col p-2.5 md:p-0 -mt-5 md:m-0">
+				<h4 class="ibm-plex-sans-600">Journal</h4>
+				<p class="s ibm-plex-sans-400">Write journal entries by mixing together items such as text, images and doodles. Supports a daily reminder notification. Written in Dart/Flutter.</p>
+			</div>
+			<div class="overflow-x-hidden flex flex-row md:flex-col mt-2 mr-2 mb-2 md:min-w-fit md:max-w-fit ml-2 gap-2 p-2.5 md:p-0">
+				<Button label="" href="github.com/reubwa/journal" icon="Github" grow={true} cl=""/>
+			</div>
+		</div>
+		<div class="flex flex-col-reverse md:flex-row rounded-xl border-[#f3f781] border overflow-clip gap-2">
 			<div class="relative cursor-pointer" on:click={()=>{showPresentLightbox=true}}>
-				<img src="/present2.jpeg" alt="Screenshot of Present 2" class=" h-fit md:h-30 w-full md:w-63">
+				<img src="/present2.jpeg" alt="Screenshot of Present 2" class=" h-fit md:h-30 w-full md:w-56">
 				<ZoomIn class="absolute bottom-0 right-0 mb-2.5 mr-2.5"/>
 			</div>
 			<div class="flex flex-col p-2.5 md:p-0 -mt-5 md:m-0">
@@ -64,38 +77,22 @@
 				<p class="s ibm-plex-sans-400">Web-based Reveal.js presentation editor with support for transitions, markdown and PDF export.
 					Written in Svelte.</p>
 			</div>
-			<div class="overflow-x-hidden flex flex-row md:flex-col mt-2 mr-2 mb-2 md:min-w-34 md:max-w-34 ml-2 gap-2 p-2.5 md:p-0">
-				<Button label="Source" href="github.com/reubwa/present2" icon="Github" grow={true} cl="w-full"/>
-				<Button label="Try" href="reubwa.github.io/present2/" icon="Play" grow={true} cl="w-full"/>
-			</div>
-		</div>
-		<div class="flex flex-col-reverse md:flex-row rounded-xl border-[#f3f781] border overflow-clip gap-2">
-			<div class="relative cursor-pointer" on:click={()=>{showJSONistLightbox=true}}>
-				<img src="/jsonist.png" alt="Screenshot of JSONist" class=" h-fit md:h-30 w-full md:w-69">
-				<ZoomIn class="absolute bottom-0 right-0 mb-2.5 mr-2.5"/>
-			</div>
-			<div class="flex flex-col p-2.5 md:p-0 -mt-5 md:m-0">
-				<h4 class="ibm-plex-sans-600">JSONist</h4>
-				<p class="s ibm-plex-sans-400">Desktop tool for analysing Network Rail Tiplocs, including performing LINQ queries and filtering.
-					Written in C# and WinForms.</p>
-			</div>
 			<div class="overflow-x-hidden flex flex-row md:flex-col mt-2 mr-2 mb-2 md:min-w-fit md:max-w-fit ml-2 gap-2 p-2.5 md:p-0">
-				<Button label="Source" href="github.com/reubwa/jsonist" icon="Github" grow={true} cl="w-full"/>
-				<Button label="Download" href="github.com/reubwa/JSONist/releases/latest" icon="Download" grow={true} cl="w-full"/>
+				<Button label="" href="github.com/reubwa/present2" icon="Github" grow={true} cl=""/>
+				<Button label="" href="reubwa.github.io/present2/" icon="Play" grow={true} cl=""/>
 			</div>
 		</div>
 		<div class="flex flex-col-reverse md:flex-row rounded-xl border-[#f3f781] border overflow-clip gap-2">
 			<div class="relative cursor-pointer" on:click={()=>{showBudgetTrackerLightbox=true}}>
-				<img src="/budget-tracker.png" alt="Screenshot of Budget Tracker" class=" h-fit md:h-30 w-full md:w-68">
+				<img src="/budget-tracker.png" alt="Screenshot of Budget Tracker" class=" h-fit md:h-30 w-full md:w-62">
 				<ZoomIn class="absolute bottom-0 right-0 mb-2.5 mr-2.5"/>
 			</div>
 			<div class="flex flex-col p-2.5 md:p-0 -mt-5 md:m-0">
 				<h4 class="ibm-plex-sans-600">Budget Tracker</h4>
 				<p class="s ibm-plex-sans-400">Project from my first year of my course. Track spending and saving, predict returns on savings. Written in PHP and uses SQLite.</p>
 			</div>
-			<div class="overflow-x-hidden flex flex-row md:flex-col mt-2 mr-2 mb-2 md:min-w-34 md:max-w-34 ml-2 gap-2 p-2.5 md:p-0">
-				<Button label="Source" href="github.com/reubwa/budget-tracker" icon="Github" grow={true} cl="w-full"/>
-				<Button label="Try" href="reubwa.github.io/coming-soon" icon="Play" grow={true} cl="w-full"/>
+			<div class="overflow-x-hidden flex flex-row md:flex-col mt-2 mr-2 mb-2 md:min-w-fit md:max-w-fit ml-2 gap-2 p-2.5 md:p-0">
+				<Button label="" href="github.com/reubwa/budget-tracker" icon="Github" grow={true} cl=""/>
 			</div>
 		</div>
 	</div>
@@ -169,7 +166,7 @@
 	<img src="/present2.jpeg" alt="Screenshot of Present 2" class="w-full md:h-full max-w-full md:max-h-full min-w-full md:min-h-full"/>
 </BaseDialog>
 <BaseDialog bind:show={showJSONistLightbox}>
-	<img src="/jsonist.png" alt="Screenshot of JSONist" class="min-w-screen md:min-h-screen w-screen md:h-screen"/>
+	<img src="https://raw.githubusercontent.com/reubwa/journal/refs/heads/main/comb.png" alt="Screenshot of Journal" class="min-w-full md:min-h-full md:full"/>
 </BaseDialog>
 <BaseDialog bind:show={showBudgetTrackerLightbox}>
 	<img src="/budget-tracker.png" alt="Screenshot of Budget Tracker" class="w-full md:h-full max-w-full md:max-h-full min-w-full md:min-h-full"/>
