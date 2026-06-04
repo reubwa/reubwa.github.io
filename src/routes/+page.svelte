@@ -41,10 +41,6 @@
 			<h4 class="ibm-plex-serif-bold">Reuben Waring</h4>
 			<Button label="" href="github.com/reubwa" icon="Github"/>
 			<Button label="" href="linkedin.com/in/reubenwaring" icon="Linkedin"/>
-			<button class="ibm-plex-mono-regular flex flex-row gap-2.5 bg-[#f3f781] text-[#5e2338] rounded-[20px] w-fit p-2.5 text-center" title="Contents">
-				<ListTree/>
-				Contents
-			</button>
 		</div>
 	</div>
 
