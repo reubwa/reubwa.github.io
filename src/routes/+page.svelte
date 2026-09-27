@@ -7,6 +7,7 @@
 	let showPresentLightbox = false;
 	let showJSONistLightbox = false;
 	let showBudgetTrackerLightbox = false;
+	let showRFTLightboc = false;
 </script>
 
 <svelte:window bind:scrollY />
@@ -48,6 +49,19 @@
 		<div class="flex flex-row items-center gap-4">
 			<h2 class="ibm-plex-serif-bold">Projects</h2>
 			<a href="#top" class="ibm-plex-mono-regular text-lg underline">↑ Top</a>
+		</div>
+		<div class="flex flex-col-reverse md:flex-row rounded-xl border-[#f3f781] border overflow-clip gap-2">
+			<div class="relative cursor-pointer" on:click={()=>{showRFTLightboc=true}}>
+				<img src="/rft-main.png" alt="Screenshot of Rail Freight Tracker" class=" h-fit md:h-30 w-full md:w-66">
+				<ZoomIn class="absolute bottom-0 right-0 mb-2.5 mr-2.5"/>
+			</div>
+			<div class="flex flex-col p-2.5 md:p-0 -mt-5 md:m-0">
+				<h4 class="ibm-plex-sans-600">Rail Freight Tracker</h4>
+				<p class="s ibm-plex-sans-400">React app for tracking freight on the UK rail network. Includes support for live tracking, journey history, station filtering and map displays.</p>
+			</div>
+			<div class="overflow-x-hidden flex flex-row md:flex-col mt-2 mr-2 mb-2 md:min-w-fit md:max-w-fit ml-2 gap-2 p-2.5 md:p-0">
+				<Button label="" href="github.com/reubwa/project-velodrome-mirror" icon="Github" grow={true} cl=""/>
+			</div>
 		</div>
 		<div class="flex flex-col-reverse md:flex-row rounded-xl border-[#f3f781] border overflow-clip gap-2">
 			<div class="relative cursor-pointer" on:click={()=>{showJSONistLightbox=true}}>
@@ -95,6 +109,9 @@
 		<p class="ibm-plex-mono-regular s">©2026 Reuben Waring</p>
 	</div>
 </div>
+<BaseDialog bind:show={showRFTLightboc}>
+	<img src="/rft-main.png" alt="Screenshot of Rail Freight Tracker" class="w-full md:h-full max-w-full md:max-h-full min-w-full md:min-h-full">
+</BaseDialog>
 <BaseDialog bind:show={showPresentLightbox}>
 	<img src="/present2.jpeg" alt="Screenshot of Present 2" class="w-full md:h-full max-w-full md:max-h-full min-w-full md:min-h-full"/>
 </BaseDialog>
