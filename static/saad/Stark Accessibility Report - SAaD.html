@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stark Accessibility Report — SAaD</title>
+  <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html {
+    line-height: 1.5;
+    text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background: #fcfcfc;
+    padding: 24px;
+  }
+
+  .report-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+  .report-header {
+    background: #ffffff;
+    color: #0d0d0d;
+    padding: 32px 40px;
+  }
+
+  .report-header h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.17;
+    margin-bottom: 24px;
+  }
+
+  .report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 56px;
+  }
+
+  .report-meta-item strong {
+    display: block;
+    color: #757575;
+    margin-bottom: 2px;
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 600;
+  }
+
+  .report-meta-item {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #0d0d0d;
+  }
+
+  .report-body {
+    padding: 32px 40px;
+  }
+
+  .overall-summary {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    padding: 12px;
+    padding-top: 4px;
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+  }
+
+  .overall-summary h2 {
+    width: 100%;
+    font-size: 24px;
+    line-height: 1.7;
+    font-weight: 900;
+    color: #0d0d0d;
+  }
+
+  .summary-badge-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .summary-badge {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    background-color: #f5f5f5;
+    width: 100%;
+  }
+
+  .summary-badge span:first-child {
+    display: flex;
+    align-items: center;
+  }
+
+  .summary-badge span:last-child {
+    font-weight: 800;
+  }
+
+  .summary-badge-icon {
+    margin-right: 8px;
+  }
+
+  .scan-section {
+    margin-bottom: 40px;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .scan-title {
+    padding: 12px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #e5e5e5;
+    word-break: break-all;
+    color: #2d3748;
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 700;
+    color: #0d0d0d;
+  }
+
+  .scan-summary {
+    display: flex;
+    gap: 8px;
+    padding: 12px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+  }
+
+  .criteria-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .criteria-table thead {
+    background: #f5f5f5;
+  }
+
+  .criteria-table th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    color: #0d0d0d;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .criteria-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
+  }
+
+  .criteria-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .criteria-table a {
+    color: #381fd1;
+    font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  .criteria-table a:hover {
+    text-decoration: underline;
+  }
+
+  .level-badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+  }
+
+  .level-a { background: #ebf8ff; color: #2b6cb0; }
+  .level-aa { background: #e9d8fd; color: #553c9a; }
+  .level-aaa { background: #fefcbf; color: #744210; }
+
+  .count {
+    text-align: center;
+  }
+
+  .count.passed {
+    color: #276749;
+    font-weight: 600;
+  }
+  .count.failed {
+    color: #c53030;
+    font-weight: 600;
+}
+  .count.indeterminate {
+    color: #856700;
+    font-weight: 600;
+  }
+
+  .no-data {
+    text-align: center;
+    color: #718096;
+    padding: 24px;
+    font-style: italic;
+  }
+
+  .report-footer {
+    text-align: center;
+    font-size: 14px;
+    color: #757575;
+    padding: 20px 40px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .text-align-center { text-align: center !important; }
+
+  @media (max-width: 600px) {
+    body { padding: 12px; }
+    .report-header, .report-body { padding: 20px; }
+    .criteria-table th:nth-child(3),
+    .criteria-table td:nth-child(3) { display: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="report-wrapper">
+    <header class="report-header">
+      <h1>Stark Accessibility Report</h1>
+      <div class="report-meta">
+        <div class="report-meta-item"><strong>Asset</strong>SAaD</div>
+        <div class="report-meta-item"><strong>Standard</strong><span class="wcag-badge">WCAG 2.2 AA</span></div>
+        <div class="report-meta-item"><strong>Filtered To</strong>Color &amp; Contrast</div>
+        <div class="report-meta-item"><strong>Pages Scanned</strong>1</div>
+        <div class="report-meta-item"><strong>Generated</strong>November 23, 2026</div>
+      </div>
+    </header>
+
+    <div class="report-body">
+      <div class="overall-summary" role="region" aria-label="Overall summary">
+        <h2>Overall Summary</h2>
+        <div class="summary-badge-container">
+          <div class="summary-badge"><span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="summary-badge-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.3335 8C1.3335 4.3181 4.31826 1.33333 8.00016 1.33333C11.6821 1.33333 14.6668 4.3181 14.6668 8C14.6668 11.6819 11.6821 14.6667 8.00016 14.6667C4.31826 14.6667 1.3335 11.6819 1.3335 8ZM6.47157 5.52859C6.21122 5.26824 5.78911 5.26824 5.52876 5.52859C5.26841 5.78894 5.26841 6.21105 5.52876 6.4714L7.05735 8L5.52876 9.52859C5.26841 9.78894 5.26841 10.2111 5.52876 10.4714C5.78911 10.7317 6.21122 10.7317 6.47157 10.4714L8.00016 8.9428L9.52876 10.4714C9.78911 10.7317 10.2112 10.7317 10.4716 10.4714C10.7319 10.2111 10.7319 9.78894 10.4716 9.52859L8.94297 8L10.4716 6.4714C10.7319 6.21105 10.7319 5.78894 10.4716 5.52859C10.2112 5.26824 9.78911 5.26824 9.52876 5.52859L8.00016 7.05719L6.47157 5.52859Z" fill="#ba1c1c"></path></svg>Violations</span> <span>0</span></div>
+          <div class="summary-badge"><span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="summary-badge-icon"><path d="M9.14972 2.63909C8.63419 1.76268 7.36677 1.76268 6.85123 2.63909L1.35017 11.9909C0.827324 12.8797 1.4682 14.0002 2.49942 14.0002H13.5015C14.5328 14.0002 15.1736 12.8797 14.6508 11.9909L9.14972 2.63909Z" fill="#fedb63"></path><path d="M7.2822 2.8926C7.60441 2.34484 8.39654 2.34484 8.71875 2.8926L14.2198 12.2444C14.5466 12.7999 14.146 13.5002 13.5015 13.5002H2.49942C1.85491 13.5002 1.45436 12.7999 1.78114 12.2444L7.2822 2.8926Z" stroke="#757575"></path><circle cx="8" cy="11.25" r="0.75" fill="black" fill-opacity="0.7"></circle><rect x="7.25" y="6" width="1.5" height="4" rx="0.75" fill="#757575"></rect></svg>Potentials</span> <span>0</span></div>
+          <div class="summary-badge"><span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="summary-badge-icon"><title>Passed</title><path fill-rule="evenodd" clip-rule="evenodd" d="M8.00016 1.33333C4.31826 1.33333 1.3335 4.3181 1.3335 8C1.3335 11.6819 4.31826 14.6667 8.00016 14.6667C11.6821 14.6667 14.6668 11.6819 14.6668 8C14.6668 4.3181 11.6821 1.33333 8.00016 1.33333ZM10.5161 6.75551C10.7493 6.47055 10.7073 6.05053 10.4223 5.81738C10.1374 5.58423 9.71734 5.62623 9.48419 5.91119L6.95067 9.00772L6.13823 8.19528C5.87788 7.93493 5.45577 7.93493 5.19543 8.19528C4.93508 8.45563 4.93508 8.87774 5.19543 9.13809L6.52876 10.4714C6.66194 10.6046 6.84525 10.6752 7.03337 10.6659C7.22149 10.6565 7.39686 10.568 7.51613 10.4222L10.5161 6.75551Z" fill="#28691b"></path></svg>Passed</span> <span>153</span></div>
+        </div>
+      </div>
+
+      
+    <section class="scan-section" aria-labelledby="scan-heading-0">
+      <h2 id="scan-heading-0" class="scan-title">Page 1</h2>
+      <div class="scan-summary">
+        <span class="summary-badge"><span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="summary-badge-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.3335 8C1.3335 4.3181 4.31826 1.33333 8.00016 1.33333C11.6821 1.33333 14.6668 4.3181 14.6668 8C14.6668 11.6819 11.6821 14.6667 8.00016 14.6667C4.31826 14.6667 1.3335 11.6819 1.3335 8ZM6.47157 5.52859C6.21122 5.26824 5.78911 5.26824 5.52876 5.52859C5.26841 5.78894 5.26841 6.21105 5.52876 6.4714L7.05735 8L5.52876 9.52859C5.26841 9.78894 5.26841 10.2111 5.52876 10.4714C5.78911 10.7317 6.21122 10.7317 6.47157 10.4714L8.00016 8.9428L9.52876 10.4714C9.78911 10.7317 10.2112 10.7317 10.4716 10.4714C10.7319 10.2111 10.7319 9.78894 10.4716 9.52859L8.94297 8L10.4716 6.4714C10.7319 6.21105 10.7319 5.78894 10.4716 5.52859C10.2112 5.26824 9.78911 5.26824 9.52876 5.52859L8.00016 7.05719L6.47157 5.52859Z" fill="#ba1c1c"></path></svg>Violations</span> <span>0</span></span>
+        <span class="summary-badge"><span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="summary-badge-icon"><path d="M9.14972 2.63909C8.63419 1.76268 7.36677 1.76268 6.85123 2.63909L1.35017 11.9909C0.827324 12.8797 1.4682 14.0002 2.49942 14.0002H13.5015C14.5328 14.0002 15.1736 12.8797 14.6508 11.9909L9.14972 2.63909Z" fill="#fedb63"></path><path d="M7.2822 2.8926C7.60441 2.34484 8.39654 2.34484 8.71875 2.8926L14.2198 12.2444C14.5466 12.7999 14.146 13.5002 13.5015 13.5002H2.49942C1.85491 13.5002 1.45436 12.7999 1.78114 12.2444L7.2822 2.8926Z" stroke="#757575"></path><circle cx="8" cy="11.25" r="0.75" fill="black" fill-opacity="0.7"></circle><rect x="7.25" y="6" width="1.5" height="4" rx="0.75" fill="#757575"></rect></svg>Potentials</span> <span>0</span></span>
+        <span class="summary-badge"><span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="summary-badge-icon"><title>Passed</title><path fill-rule="evenodd" clip-rule="evenodd" d="M8.00016 1.33333C4.31826 1.33333 1.3335 4.3181 1.3335 8C1.3335 11.6819 4.31826 14.6667 8.00016 14.6667C11.6821 14.6667 14.6668 11.6819 14.6668 8C14.6668 4.3181 11.6821 1.33333 8.00016 1.33333ZM10.5161 6.75551C10.7493 6.47055 10.7073 6.05053 10.4223 5.81738C10.1374 5.58423 9.71734 5.62623 9.48419 5.91119L6.95067 9.00772L6.13823 8.19528C5.87788 7.93493 5.45577 7.93493 5.19543 8.19528C4.93508 8.45563 4.93508 8.87774 5.19543 9.13809L6.52876 10.4714C6.66194 10.6046 6.84525 10.6752 7.03337 10.6659C7.22149 10.6565 7.39686 10.568 7.51613 10.4222L10.5161 6.75551Z" fill="#28691b"></path></svg>Passed</span> <span>153</span></span>
+      </div>
+      <table class="criteria-table" aria-label="WCAG criteria results for Page 1">
+        <thead>
+          <tr>
+            <th scope="col">Criteria</th>
+            <th scope="col">Name</th>
+            <th scope="col">Level</th>
+            <th scope="col" class="text-align-center">Violations</th>
+            <th scope="col" class="text-align-center">Potentials</th>
+            <th scope="col" class="text-align-center">Passed</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        <tr>
+          <td><a href="https://www.getstark.co/wcag-explained/perceivable/distinguishable/contrast-minimum/" target="_blank" rel="noopener noreferrer">1.4.3</a></td>
+          <td>Contrast (Minimum)</td>
+          <td><span class="level-badge level-aa">AA</span></td>
+          <td class="count ">-</td>
+          <td class="count ">-</td>
+          <td class="count passed">153</td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+    </div>
+
+    <footer class="report-footer">
+      Generated by <strong>Stark</strong> &mdash; November 23, 2026 &mdash; WCAG 2.2 AA
+    </footer>
+  </div>
+</body>
+</html>
